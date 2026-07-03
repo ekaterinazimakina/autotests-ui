@@ -4,21 +4,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+
+        h6 {
+            font-size: 15px
+        }
         .h2-text {
             color: red
+        }
+        .h6-text {
+            color: yellow
+        }
+        #h1-text {
+            font-size: 50px
+        }
+        div.python > a {
+            color: green
+        }
+        ul li {
+            color: green
+        }
+        input[type="Text"]{
+            background-color: blue
+        }
+        a:hover{
+            color: red
+        }
+        input[type="Text"]:hover{
+            background-color: green
+        }
+        li::marker{
+            color: red
+        }
+        ul > li:nth-child(2){
+            color: blue
         }
     </style>
 </head>
 <body>
-<div>
+<div class="Python">
 
     <h1 id="h1-text">Text</h1>
     <h2 class="h2-text">Text 2</h2>
+    <h6 class="h2-text h6-text">Text 3</h6>
     <p>Hello <span style="color: darkgreen">dear friends</span></p>
     <a href="https://stepik.org/lesson/1452311/step/2?unit=1471322" target="_blank">Python</a>
     <img alt="browsers.png" src="https://ucarecdn.stepik.net/8fc2bdde-1f71-4061-9641-b94a7276b55e/" style="width: 250px">
     <ul>
-        <li class="h2-text">Item 1</li>
+        <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
     </ul>
@@ -56,6 +88,17 @@
 </tr>
         </tbody>
     </table>
+    <div class="nth">
+        <p>1</p>
+        <p>2</p>
+        <h6>3</h6>
+        <h5>4</h5>
+        <p>5</p>
+    </div>
+</div>
+<div class="JavaScript">
+    <h2 class="h2-text">Text 2</h2>
+    <a href="https://stepik.org/lesson/1452311/step/2?unit=1471322" target="_blank">JavaScript</a>
 </div>
 </body>
 </html>
