@@ -15,4 +15,4 @@ def test_successful_registration(registration_page: RegistrationPage, dashboard_
         password='password'
     )
     registration_page.click_registration_button()
-    dashboard_page.check_dashboard_title_visibility()
+    dashboard_page.check_visible_dashboard_title()
