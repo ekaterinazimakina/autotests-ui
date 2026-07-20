@@ -8,7 +8,7 @@ class CreateCoursePage(BasePage):
         super().__init__(page)
 
         self.create_course_title = page.get_by_test_id('create-course-toolbar-title-text')
-        self.create_course_button = page.get_by_test_id('reate-course-toolbar-create-course-button')
+        self.create_course_button = page.get_by_test_id('create-course-toolbar-create-course-button')
 
         self.preview_image = page.get_by_test_id('create-course-preview-image-upload-widget-preview-image')
         self.preview_empty_view_icon = page.get_by_test_id('create-course-preview-empty-view-icon')
@@ -42,7 +42,7 @@ class CreateCoursePage(BasePage):
         self.exercises_empty_view_description = page.get_by_test_id(
             'create-course-exercises-empty-view-description-text')
 
-    def check_visible_create_create_course_title(self):
+    def check_visible_create_course_title(self):
         expect(self.create_course_title).to_be_visible()
         expect(self.create_course_title).to_have_text('Create course')
 
@@ -52,7 +52,7 @@ class CreateCoursePage(BasePage):
     def check_visible_create_course_button(self):
         expect(self.create_course_button).to_be_visible()
 
-    def check_disable_create_course_button(self):
+    def check_disabled_create_course_button(self):
         expect(self.create_course_button).to_be_disabled()
 
     def check_visible_image_preview_empty_view(self):
@@ -110,7 +110,7 @@ class CreateCoursePage(BasePage):
         expect(self.create_course_min_score_input).to_be_visible()
         expect(self.create_course_min_score_input).to_have_value(min_score)
 
-    def fill_visible_create_course_form(
+    def fill_create_course_form(
             self,
             title: str,
             estimated_time: str,
@@ -137,7 +137,7 @@ class CreateCoursePage(BasePage):
         expect(self.exercises_title).to_be_visible()
         expect(self.exercises_title).to_have_text('Exercises')
 
-    def check_visible_create_exercises_button(self):
+    def check_visible_create_exercise_button(self):
         expect(self.create_exercises_button).to_be_visible()
 
     def click_create_exercises_button(self):

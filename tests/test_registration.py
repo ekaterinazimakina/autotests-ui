@@ -1,5 +1,4 @@
 import pytest
-from playwright.sync_api import sync_playwright, expect, Page
 
 from fixtures.pages import dashboard_page
 from pages.registration_page import RegistrationPage
