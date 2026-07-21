@@ -1,11 +1,13 @@
 import pytest
 
+from pages.courses_list_page import CoursesListPage
+from pages.create_course_page import CreateCoursePage
 
 @pytest.mark.courses
 @pytest.mark.regression
 def test_create_course(
-        create_course_page,
-        course_list_page
+        create_course_page: CreateCoursePage,
+        course_list_page: CoursesListPage,
 ):
     create_course_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
     create_course_page.check_visible_create_course_title()
