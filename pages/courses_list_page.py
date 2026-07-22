@@ -2,7 +2,7 @@ from components.courses.course_view_component import CourseViewComponent
 from components.views.empty_view_components import EmptyViewComponents
 from pages.base_page import BasePage
 
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from navigation.navbar_component import NavbarComponent
 
@@ -17,9 +17,9 @@ class CoursesListPage(BasePage):
 
         self.navbar = NavbarComponent(page)
         self.sidebar = SidebarComponent(page)
-        self.empty_view = EmptyViewComponents(page, identifier='courses-list')
-        self.course_view = CourseViewComponent(page)
         self.toolbar_view = CourseListToolbarViewComponent(page)
+        self.course_view = CourseViewComponent(page)
+        self.empty_view = EmptyViewComponents(page, identifier='courses-list')
 
     def check_visible_empty_view(self):
         self.empty_view.check_visible(
