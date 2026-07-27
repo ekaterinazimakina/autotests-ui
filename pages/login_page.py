@@ -3,11 +3,11 @@ from playwright.sync_api import Page, expect
 from components.authentication.login_form_component import LoginFormComponent
 from pages.base_page import BasePage
 
-from components.elemants.button import Button
+from components.elements.button import Button
 
-from components.elemants.link import Link
+from components.elements.link import Link
 
-from components.elemants.text import Text
+from components.elements.text import Text
 
 
 class LoginPage(BasePage):
@@ -16,8 +16,12 @@ class LoginPage(BasePage):
 
         self.login_form = LoginFormComponent(page)
 
-        self.login_button = Button(page, 'login-page-login-button', 'Login')
-        self.registration_link = Link(page, 'login-page-registration-link', 'Registration')
+        self.login_button = Button(
+            page, 'login-page-login-button', 'Login'
+        )
+        self.registration_link = Link(
+            page, 'login-page-registration-link', 'Registration'
+        )
         self.wrong_email_or_password_alert = Text(
             page, 'login-page-wrong-email-or-password-alert', 'Wrong email or password'
         )
