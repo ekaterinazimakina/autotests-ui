@@ -8,7 +8,7 @@ import allure
 
 from tools.allure.tags import AllureTag
 
-from tools.allure.epics import AllureEpics
+from tools.allure.epics import AllureEpic
 from tools.allure.features import AllureFeature
 from tools.allure.stories import AllureStory
 from allure_commons.types import Severity
@@ -16,9 +16,12 @@ from allure_commons.types import Severity
 @pytest.mark.courses
 @pytest.mark.regression
 @allure.tag(AllureTag.REGRESSION, AllureTag.COURSES)
-@allure.epic(AllureEpics.LMS)
+@allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.COURSES)
 @allure.story(AllureStory.COURSES)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.suite(AllureFeature.COURSES)
+@allure.sub_suite(AllureStory.COURSES)
 class TestCourses:
     @allure.title('Check displaying of empty courses list')
     @allure.severity(Severity.NORMAL)
