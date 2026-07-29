@@ -2,9 +2,9 @@ from components.base_component import BaseComponent
 
 from playwright.sync_api import Page
 
-from components.elements.input import Input
+from elements.input import Input
 
-from components.elements.textarea import Textarea
+from elements.textarea import Textarea
 
 
 class CreateCourseFormComponent(BaseComponent):

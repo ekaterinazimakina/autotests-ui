@@ -3,9 +3,9 @@ from playwright.sync_api import Page
 from components.authentication.registration_form_component import RegistrationFormComponent
 from pages.base_page import BasePage
 
-from components.elements.button import Button
+from elements.button import Button
 
-from components.elements.link import Link
+from elements.link import Link
 
 import re
 

@@ -2,9 +2,9 @@ from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
 
-from components.elements.text import Text
+from elements.text import Text
 
-from components.elements.button import Button
+from elements.button import Button
 
 
 class CreateCourseExercisesToolbarViewComponent(BaseComponent):

@@ -4,15 +4,15 @@ from playwright.sync_api import Page
 
 from components.views.empty_view_components import EmptyViewComponents
 
-from components.elements.image import Image
+from elements.image import Image
 
-from components.elements.icon import Icon
+from elements.icon import Icon
 
-from components.elements.text import Text
+from elements.text import Text
 
-from components.elements.button import Button
+from elements.button import Button
 
-from components.elements.file_input import FileInput
+from elements.file_input import FileInput
 
 
 class ImageUploadWidgetComponent(BaseComponent):

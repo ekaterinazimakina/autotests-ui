@@ -4,9 +4,9 @@ from pages.base_page import BasePage
 
 from playwright.sync_api import Page
 
-from navigation.navbar_component import NavbarComponent
+from components.navigation.navbar_component import NavbarComponent
 
-from navigation.sidebar_component import SidebarComponent
+from components.navigation.sidebar_component import SidebarComponent
 
 from components.courses.courses_list_toolbar_view_component import CourseListToolbarViewComponent
 

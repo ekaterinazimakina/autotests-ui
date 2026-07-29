@@ -2,9 +2,9 @@ from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
 
-from components.elements.text import Text
+from elements.text import Text
 
-from components.elements.image import Image
+from elements.image import Image
 
 
 class ChartViewComponent(BaseComponent):
