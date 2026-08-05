@@ -42,8 +42,10 @@ jobs:
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.15
         if: always()
+        id: allure-report
         with:
           allure_results: allure-results
+          gh_pages: gh-pages
           allure_history: allure-history
 
       - name: Deploy report to GitHub Pages
