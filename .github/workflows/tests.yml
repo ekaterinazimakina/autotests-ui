@@ -31,13 +31,6 @@ jobs:
         run: |
           pytest -m regression --alluredir=./allure-results --numprocesses 2
 
-      - name: Check Allure results #диагностика
-        if: always()
-        run: |
-          echo "Allure results:"
-          ls -la allure-results
-          find allure-results -type f | head -30
-
       - name: Get Allure history
         uses: actions/checkout@v7
         if: always()
@@ -56,20 +49,10 @@ jobs:
           allure_report: allure-report
           allure_history: allure-history
 
-      - name: Check Allure directories #диагностика
+      - name: Remove git directory from allure-history
         if: always()
         run: |
-          echo "=== allure-results ==="
-          find allure-results -maxdepth 2 -type f | head -30 || true
-            
-          echo "=== allure-report ==="
-          find allure-report -maxdepth 2 -type f | head -30 || true
-            
-          echo "=== allure-history ==="
-          find allure-history -maxdepth 2 -type f | head -30 || true
-            
-          echo "=== index.html files ==="
-          find . -name "index.html" -print || true
+          rm -rf allure-history/.git
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
