@@ -1,4 +1,4 @@
-name: UI tests
+name: UI tests #ошибка при создании ветки
 
 on:
   push:
