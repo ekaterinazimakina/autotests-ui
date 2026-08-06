@@ -39,6 +39,10 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+      - name: Remove git metadata from history checkout
+        if: always()
+        run: rm -rf gh-pages/.git
+
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.15
         if: always()
@@ -48,15 +52,6 @@ jobs:
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history
-
-      - name: Debug allure-history
-        if: always()
-        run: |
-          echo "whoami: $(whoami)"
-          echo "--- top level ---"
-          ls -la allure-history || echo "!!! allure-history folder does not exist !!!"
-          echo "--- recursive ---"
-          find allure-history -maxdepth 2 -ls || true
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
