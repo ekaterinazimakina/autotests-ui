@@ -31,8 +31,8 @@ jobs:
         run: |
           pytest -m regression --alluredir=./allure-results --numprocesses 2
 
-      - name: Get Allure history #v2
-        uses: actions/checkout@v7
+      - name: Get Allure history
+        uses: actions/checkout@v2
         if: always()
         continue-on-error: true
         with:
