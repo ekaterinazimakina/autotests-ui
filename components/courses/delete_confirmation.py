@@ -13,9 +13,9 @@ class DeleteConfirmation(BaseComponent):
         super().__init__(page)
 
         self.title = Text(page, 'modal-title-text', 'Title')
-        self.close_button = Button(page, 'modal-close-button', 'Close button')
-        self.confirm_button = Button(page, 'modal-confirm-button', 'Confirm button')
-        self.cancel_button = Button(page, 'modal-cancel-button', 'Cancel button')
+        self.close_button = Button(page, 'modal-close-button', 'Close')
+        self.confirm_button = Button(page, 'modal-confirm-button', 'Confirm')
+        self.cancel_button = Button(page, 'modal-cancel-button', 'Cancel')
 
     @allure.step('Check visible delete confirmation dialog')
     def check_visible(self):
