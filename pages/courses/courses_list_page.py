@@ -10,6 +10,8 @@ from components.navigation.sidebar_component import SidebarComponent
 
 from components.courses.courses_list_toolbar_view_component import CourseListToolbarViewComponent
 
+from components.courses.delete_confirmation import DeleteConfirmation
+
 
 class CoursesListPage(BasePage):
     def __init__(self, page: Page):
@@ -20,9 +22,11 @@ class CoursesListPage(BasePage):
         self.toolbar_view = CourseListToolbarViewComponent(page)
         self.course_view = CourseViewComponent(page)
         self.empty_view = EmptyViewComponents(page, identifier='courses-list')
+        self.delete_confirmation = DeleteConfirmation(page)
 
     def check_visible_empty_view(self):
         self.empty_view.check_visible(
             title='There is no results',
             description='Results from the load test pipeline will be displayed here'
         )
+
