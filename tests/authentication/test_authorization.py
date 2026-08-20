@@ -81,3 +81,14 @@ class TestAuthorization:
         login_page.click_registration_link()
 
         registration_page.registration_form.check_visible(email='', username='', password='')
+
+    @allure.tag(AllureTag.AUTHORIZATION)
+    @allure.title('Logout after authorization')
+    @allure.severity(Severity.NORMAL)
+    def test_logout_after_authorization(self, dashboard_page_with_state: DashboardPage, login_page: LoginPage):
+        dashboard_page_with_state.visit(AppRoute.DASHBOARD)
+        dashboard_page_with_state.sidebar.click_logout()
+
+        login_page = LoginPage(page=dashboard_page_with_state.page)
+        login_page.login_form.check_visible(email='', password='')
+
